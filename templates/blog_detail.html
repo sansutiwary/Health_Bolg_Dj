@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+
+
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color: teal;
+ color: #fff;
+ position: fixed;
+ width: 100%;
+ margin-top: -20px;
+ margin-left: -20px;
+
+}
+
+#oo{
+  margin-top: 153px;
+}
+
+#h{
+  margin-top: 145px;
+}
+
+   /* UTILITIES */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body {
+ font-family: cursive;
+}
+a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color: teal;
+ color: #fff;
+ position: fixed;
+ width: 100%;
+ 
+}
+.nav-links a {
+ color: #fff;
+}
+/* LOGO */
+.logo {
+ font-size: 32px;
+}
+/* NAVBAR MENU */
+.menu {
+ display: flex;
+ gap: 1em;
+ font-size: 18px;
+}
+.menu li:hover {
+ background-color: #4c9e9e;
+ border-radius: 5px;
+ transition: 0.3s ease;
+}
+.menu li {
+ padding: 5px 14px;
+}
+/* DROPDOWN MENU */
+.services {
+ position: relative; 
+}
+.dropdown {
+ background-color: rgb(1, 139, 139);
+ padding: 1em 0;
+ position: absolute; /*WITH RESPECT TO PARENT*/
+ display: none;
+ border-radius: 8px;
+ top: 35px;
+}
+.dropdown li + li {
+ margin-top: 10px;
+}
+.dropdown li {
+ padding: 0.5em 1em;
+ width: 8em;
+ text-align: center;
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+.services:hover .dropdown {
+ display: block;
+}
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+ display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+.menu { 
+ display:none;
+ position: absolute;
+ background-color:teal;
+ right: 0;
+ left: 0;
+ text-align: center;
+ padding: 16px 0;
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+}
+
+.fg{
+  
+    display: block;
+    width: 100%;
+    height: 51px;
+    background: #4E9CAF;
+    padding: 14px;
+    text-align: center;
+    border-radius: 37px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.gv{
+  
+    width: 100%;
+    /* height: 50%; */
+    padding: 49px;
+    margin-top: -45px;
+    margin-left: 4px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+  margin-top: 110px;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+ .fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+} 
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8464532911233023"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <!-- LOGO -->
+    <div class="logo">Code Blog</div>
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+     <input type="checkbox" id="checkbox_toggle" />
+     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    <!-- NAVIGATION MENUS -->
+    <div class="menu">
+   
+     <li><a class="fg" href="/">Home</a></li>
+     <!-- user name display -->
+     {% if user.is_authenticated %}
+       <li><a class="fg" href="/">{{request.user}}</a></li>
+       
+        {% if user.id == blog.user_id_id  %}
+          
+      
+       <li> <a class="fg" href="/edit/{{blog.id}}" style="background-color: rgb(241, 212, 79);">Edit Blog</a></li>
+       
+       <li>  <a class="fg" href="/delete/{{blog.id}}" style="background-color: red;">Delete Blog</a></li>
+       {% endif %}
+
+       <li>  <a class="fg" href="/post_blog" style="background-color:lightgreen;">Post Blog</a></li>
+       <li> <a class="fg" href="/user_logout" style="background-color: red;">Logout</a></li>
+
+      
+       
+
+     {% else %}
+   
+     <li> <a  class='fg' href="/register">Sign Up</a></li>
+     <li><a  class='fg' href="/user_login">Sign In</a></li>
+     {% endif %}
+    </div>
+    </ul>
+    </nav>
+    <div class="header">
+      <h2>{{blog.title}}</h2>
+    </div>
+    
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          
+          <h5>Post Date: {{blog.date}}</h5><br>
+          <h5>Author: {{blog.user_id}}</h5><br>
+          
+          <!-- <div class="gv" ></div> -->
+    
+          <img src="{{blog.ImgLink}}" class="gv" ><br>
+        
+          <br>
+          <p>{{blog.description|safe}}</p>
+          </div>
+        </div>
+        
+     
+    
+
+</body>
+</html>
+
