@@ -15,7 +15,6 @@ Welcome to Health Blog DJ! This is a Django web application aimed at providing v
 
 # Health Blog DJ
 
-![Health Blog DJ Logo]
 
 ## Screenshots
 
