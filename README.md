@@ -1,6 +1,6 @@
 # Health Blog DJ
 
-![Health Blog DJ Logo](https://example.com/logo.png)
+![Health Blog DJ Logo]
 
 Welcome to Health Blog DJ! This is a Django web application aimed at providing valuable health-related information and resources to users. Whether you're looking for tips on nutrition, exercise routines, or mental health advice, Health Blog DJ has got you covered!
 
